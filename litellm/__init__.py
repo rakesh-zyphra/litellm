@@ -542,6 +542,7 @@ gemini_models: Set = set()
 xai_models: Set = set()
 zai_models: Set = set()
 deepseek_models: Set = set()
+zyphra_models: Set = set()
 runwayml_models: Set = set()
 azure_ai_models: Set = set()
 jina_ai_models: Set = set()
@@ -752,6 +753,8 @@ def add_known_models(model_cost_map: Optional[Dict] = None):
             fal_ai_models.add(key)
         elif value.get("litellm_provider") == "deepseek":
             deepseek_models.add(key)
+        elif value.get("litellm_provider") == "zyphra":
+            zyphra_models.add(key)
         elif value.get("litellm_provider") == "runwayml":
             runwayml_models.add(key)
         elif value.get("litellm_provider") == "meta_llama":
@@ -932,6 +935,7 @@ model_list = list(
     | zai_models
     | fal_ai_models
     | deepseek_models
+    | zyphra_models
     | azure_ai_models
     | voyage_models
     | infinity_models
@@ -1024,6 +1028,7 @@ models_by_provider: dict = {
     "zai": zai_models,
     "fal_ai": fal_ai_models,
     "deepseek": deepseek_models,
+    "zyphra": zyphra_models,
     "runwayml": runwayml_models,
     "mistral": mistral_chat_models,
     "azure_ai": azure_ai_models,

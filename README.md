@@ -364,6 +364,7 @@ curl -X POST 'http://0.0.0.0:4000/v1/chat/completions' \
 | [Watsonx Text (`watsonx_text`)](https://docs.litellm.ai/docs/providers/watsonx) | ✅ | ✅ | ✅ |  |  |  |  |  |  |  |
 | [xAI (`xai`)](https://docs.litellm.ai/docs/providers/xai) | ✅ | ✅ | ✅ |  |  |  |  |  |  |  |
 | [Xinference (`xinference`)](https://docs.litellm.ai/docs/providers/xinference) |  |  |  | ✅ |  |  |  |  |  |  |
+| [Zyphra (`zyphra`)](https://docs.litellm.ai/docs/providers/zyphra) | ✅ |  |  |  |  |  |  |  |  |  |
 
 [**Read the Docs**](https://docs.litellm.ai/docs/)
 

@@ -689,6 +689,13 @@ def _get_openai_compatible_provider_info(  # noqa: PLR0915
         )  # type: ignore
 
         dynamic_api_key = api_key or get_secret_str("DEEPSEEK_API_KEY")
+    elif custom_llm_provider == "zyphra":
+        (
+            api_base,
+            dynamic_api_key,
+        ) = litellm.ZyphraChatConfig()._get_openai_compatible_provider_info(
+            api_base, api_key
+        )
     elif custom_llm_provider == "fireworks_ai":
         # fireworks is openai compatible, we just need to set this to custom_openai and have the api_base be https://api.fireworks.ai/inference/v1
         (

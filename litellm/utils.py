@@ -6428,6 +6428,11 @@ def validate_environment(  # noqa: PLR0915
                 keys_in_environment = True
             else:
                 missing_keys.append("DEEPSEEK_API_KEY")
+        elif custom_llm_provider == "zyphra":
+            if "ZYPHRA_API_KEY" in os.environ:
+                keys_in_environment = True
+            else:
+                missing_keys.append("ZYPHRA_API_KEY")
         elif custom_llm_provider == "mistral":
             if "MISTRAL_API_KEY" in os.environ:
                 keys_in_environment = True
@@ -8038,6 +8043,7 @@ class ProviderConfigManager:
             ),
             # Simple provider mappings (no model parameter needed)
             LlmProviders.DEEPSEEK: (lambda: litellm.DeepSeekChatConfig(), False),
+            LlmProviders.ZYPHRA: (lambda: litellm.ZyphraChatConfig(), False),
             LlmProviders.GROQ: (lambda: litellm.GroqChatConfig(), False),
             LlmProviders.BEDROCK_MANTLE: (
                 lambda: litellm.BedrockMantleChatConfig(),

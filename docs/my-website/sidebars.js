@@ -915,6 +915,7 @@ const sidebars = {
         "providers/deepgram",
         "providers/deepinfra",
         "providers/deepseek",
+        "providers/zyphra",
         "providers/docker_model_runner",
         "providers/elevenlabs",
         "providers/fal_ai",
